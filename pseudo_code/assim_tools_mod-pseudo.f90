@@ -145,7 +145,7 @@ SEQUENTIAL_OBS: do i = 1, obs_ens_handle%num_vars
    ! Next block is done by processes that do NOT own this observation
    !-----------------------------------------------------------------------
    else
-      ! I don't store this obs; receive the obs prior and increment from broadcast
+      ! I don't store this obs; receive the obs prior from broadcast
       ! Also get qc and inflation information if needed
       ! also a converted vertical coordinate if needed
       call broadcast_recv(map_pe_to_task(ens_handle, owner), obs_prior, obs_inc, &
