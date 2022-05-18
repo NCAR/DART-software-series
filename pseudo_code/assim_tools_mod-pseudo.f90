@@ -118,9 +118,8 @@ SEQUENTIAL_OBS: do i = 1, obs_ens_handle%num_vars
    call get_var_owner_index(ens_handle, int(i,i8), owner, owners_index)
 
 !-- Section 3b --------------------------------------------------
-!  There is a split here.  The owner of the obs calculates the increments
-!  for the observation, then sends out the increments to all other processors.
-!  The other processors hang out waiting to recieve the increments.
+!  There is a split here.  The owner of the obs calculates the obs_prior
+!  and broadcasts this out to all other processors.
 
    ! Following block is done only by the owner of this observation
    !-----------------------------------------------------------------------
@@ -135,11 +134,6 @@ SEQUENTIAL_OBS: do i = 1, obs_ens_handle%num_vars
          ! Compute the prior mean and variance for this observation
          orig_obs_prior_mean = obs_ens_handle%copies(OBS_PRIOR_MEAN_START:OBS_PRIOR_MEAN_END, owners_index)
          orig_obs_prior_var  = obs_ens_handle%copies(OBS_PRIOR_VAR_START:OBS_PRIOR_VAR_END, owners_index)
-
-         ! Compute observation space increments
-            call obs_increment(obs_prior, 1, obs(1), &
-               obs_err_var, obs_inc, inflate, my_inflate,   &
-               my_inflate_sd, net_a)
 
       endif IF_QC_IS_OKAY
 
@@ -168,7 +162,12 @@ SEQUENTIAL_OBS: do i = 1, obs_ens_handle%num_vars
    ! Everybody is doing this section, cycle if qc is bad
    if(nint(obs_qc) /= 0) cycle SEQUENTIAL_OBS
   
-   ! Can compute prior mean and variance of obs
+   ! Compute observation space increments
+   call obs_increment(obs_prior(grp_bot:grp_top), grp_size, obs(1), &
+         obs_err_var, obs_inc(grp_bot:grp_top), inflate, my_inflate,   &
+         my_inflate_sd, net_a(group))
+
+   ! compute prior mean and variance of obs
    obs_prior_mean = sum(obs_prior) / ens_size
    obs_prior_var = sum((obs_prior - obs_prior_mean)**2) / ens_size
   
@@ -236,6 +235,7 @@ SEQUENTIAL_OBS: do i = 1, obs_ens_handle%num_vars
 
          if(final_factor <= 0.0_r8) cycle OBS_UPDATE
 
+         ! Do the update
          call obs_updates_ens(ens_size, num_groups, obs_ens_handle%copies(1:ens_size, obs_index), &
             my_obs_loc(obs_index), my_obs_kind(obs_index), obs_prior, obs_inc, &
             obs_prior_mean, obs_prior_var, base_obs_loc, base_obs_type, obs_time, &
