@@ -1,4 +1,3 @@
-
 module filter_mod
 
 contains
@@ -6,15 +5,13 @@ contains
 !----------------------------------------------------------------
 subroutine filter_main()
 
-
+!------------------------
 ! A bunch of initialization.
-
-! Set up stages to write : input, preassim, postassim, output
-call parse_stages_to_write(stages_to_write)
-
-! Count and set up State copy numbers
-num_state_ens_copies = count_state_ens_copies(ens_size, prior_inflate, post_inflate)
-num_extras           = num_state_ens_copies - ens_size
+! * Read the namelist
+! * How many ensemble members
+! * How many extra copies (e.g. mean, sd, ...)
+! Any time you see *_init that is normally a model being initialized
+!------------------------
 
 ! Initialize the obs_sequence; every pe gets a copy for now
 call filter_setup_obs_sequence(seq, in_obs_copy, obs_val_index, input_qc_index, DART_qc_index, compute_posterior)
@@ -51,7 +48,8 @@ time_step_number = -1
 ! Inifinte loop. 
 ! Run until you run out of observations
 !  or
-! Exit if you can not advance the model (run a forcast) inside filter
+! If your model needs advancing to the time of the observations, but
+!  you can not advance the model (run a forcast) inside filter
 AdvanceTime : do
 
    time_step_number = time_step_number + 1
@@ -73,7 +71,7 @@ AdvanceTime : do
 
    ! if model state data not at required time, advance model
    ! Big models - filter exits if the model is not at the correct time
-   ! Small models - 
+   ! Small models - filter runs the model as a subroutine.
    if (curr_ens_time /= next_ens_time) then
       ! Must be done before the model runs and updates the data.
 
