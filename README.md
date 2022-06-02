@@ -22,3 +22,10 @@ Link to add [DART software calendar](https://calendar.google.com/calendar/u/0?ci
    [slides](https://docs.google.com/presentation/d/1dnkh4geBuBpWpwn2Rb8Gs5276EAJZwJmjZdDiy7YNyM/edit?usp=sharing)  
    Pseudo code for `subroutine filter_main()` [filter\_mod-pseudo.f90](pseudo_code/filter_mod-pseudo.f90)
    Compare to [filter\_mod.f90](https://github.com/NCAR/DART/blob/main/assimilation_code/modules/assimilation/filter_mod.f90)
+
+
+3. State IO  
+
+   June 2nd 
+   [slides](https://docs.google.com/presentation/d/1xjFbxj7HNyheFacjgKxqJDLkZcmoRd4qcaUpeDyLvaE/edit?usp=sharing)
+   
