@@ -10,7 +10,7 @@ subroutine filter_main()
 ! * Read the namelist
 ! * How many ensemble members
 ! * How many extra copies (e.g. mean, sd, ...)
-! Any time you see *_init that is normally a model being initialized
+! Any time you see *_init that is normally a module being initialized
 !------------------------
 
 ! Initialize the obs_sequence; every pe gets a copy for now
