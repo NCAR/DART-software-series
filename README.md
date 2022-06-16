@@ -29,3 +29,8 @@ Link to add [DART software calendar](https://calendar.google.com/calendar/u/0?ci
    June 2nd 
    [slides](https://docs.google.com/presentation/d/1xjFbxj7HNyheFacjgKxqJDLkZcmoRd4qcaUpeDyLvaE/edit?usp=sharing)
    
+4. Types vs Quantities
+
+   June 16
+   [slides](https://docs.google.com/presentation/d/1h5CDS0rh8u02VBfs17lmi_OVyhwTQk8VZmnEqH9YjxI/edit?usp=sharing)
+   
