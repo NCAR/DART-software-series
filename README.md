@@ -7,6 +7,19 @@ Repository for **DART Software series**: slides and pseudo code.
 Link to add [DART software calendar](https://calendar.google.com/calendar/u/0?cid=Y19tbWRkYXFnbG9qcGR2aTRodjltazBuOTRzMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t) to your google calendar.
 
 
+
+## 2024
+
+1. DART data views  
+   Ensemble manager
+   Sequential obs do loop (inside `subroutine filter_assim`)
+ 
+   June 3rd 2024
+   [slides](https://docs.google.com/presentation/d/1UPqnPKR-9yNSKj2ckSKRjTJMUXUlAOXrknnG1kNVIUM/edit?usp=sharing)
+
+
+## 2022
+
 1. Ensemble manager  
    Sequential obs do loop (inside `subroutine filter_assim`)
 
