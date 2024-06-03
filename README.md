@@ -16,6 +16,7 @@ Link to add [DART software calendar](https://calendar.google.com/calendar/u/0?ci
  
    June 3rd 2024
    [slides](https://docs.google.com/presentation/d/1UPqnPKR-9yNSKj2ckSKRjTJMUXUlAOXrknnG1kNVIUM/edit?usp=sharing)
+   Pseudo code for [assim\_tools\_mod_qceff-pseudo.f90](pseudo_code/assim_tools_mod_qceff-pseudo.f90).
 
 
 ## 2022
