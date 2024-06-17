@@ -10,23 +10,23 @@ Link to add [DART software calendar](https://calendar.google.com/calendar/u/0?ci
 
 ## 2024
 
-1. DART data views  
-   Ensemble manager
-   Sequential obs do loop (inside `subroutine filter_assim`)
+1. DART data views    
+   Ensemble manager  
+   Sequential obs do loop (inside `subroutine filter_assim`)  
  
    June 3rd 2024
    [slides](https://docs.google.com/presentation/d/1UPqnPKR-9yNSKj2ckSKRjTJMUXUlAOXrknnG1kNVIUM/edit?usp=sharing)
    Pseudo code for [assim\_tools\_mod_qceff-pseudo.f90](pseudo_code/assim_tools_mod_qceff-pseudo.f90).
 
-2. Observations and Observation Sequences
+2. Observations and Observation Sequences  
    June 10th 2024  
    [slides](https://docs.google.com/presentation/d/1Q3wCpIF40MPWkrKFzqXTBkJMyu0PbaD489dJJ8KmD3I/edit?usp=sharing)
 
 
-3. Build system
-   [build system](https://docs.google.com/presentation/d/1SeT16gUN9bwfB2MVvHfMfjVPOpiv7Fp1jmrgkFVU3Zg/edit?usp=sharing)
-   [types vs quanties](https://docs.google.com/presentation/d/1h5CDS0rh8u02VBfs17lmi_OVyhwTQk8VZmnEqH9YjxI/edit?usp=sharing)
-   June 17th 2024
+3. Build system  
+   [build system](https://docs.google.com/presentation/d/1SeT16gUN9bwfB2MVvHfMfjVPOpiv7Fp1jmrgkFVU3Zg/edit?usp=sharing)  
+   [types vs quanties](https://docs.google.com/presentation/d/1h5CDS0rh8u02VBfs17lmi_OVyhwTQk8VZmnEqH9YjxI/edit?usp=sharing)  
+   June 17th 2024  
 
 ## 2022
 
